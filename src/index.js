@@ -7,7 +7,7 @@
 
 
 /**
- * represent a linear search algorithm
+ * Represent a linear search algorithm
  * @method
  * @param {number[]} arr
  * @param {number} num
@@ -24,7 +24,7 @@ function linearsearch(arr, num){
 }
 
 /**
- * Binary search algorithm
+ * Represent a binary search algorithm
  * @param {number[]} arr
  * @param {numner} target
  * 
@@ -93,11 +93,34 @@ function bubblesort(arr){
     return arr;
 }
 
+/**
+ * Represent a seletion sort algorithm
+ * @param {number[]} arr 
+ */
+function selectionSort(arr){
+    for(let i =0; i < arr.length -1; i++){
+        let lowerindex = i;
+        for( let j = i+1; j < arr.length; j++){
+            if(arr[j] < arr[lowerindex]){
+                lowerindex = j;
+            }
+        }
+
+        if(lowerindex != i){
+            let temp = arr[i];
+            arr[i] = arr[lowerindex];
+            arr[lowerindex] = temp;
+        }
+    }
+    return arr;
+}
+
+
 
 let list = [14, 1, 4, 7, 5 ,6, 2];
 
-let target = 7;
+console.log(list)
 
-let sorted = bubblesort(list);
+let sorted = selectionSort(list);
 
-console.log(binarySearch(sorted, target));
+console.log(sorted);
